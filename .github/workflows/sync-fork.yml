@@ -1,0 +1,19 @@
+name: sync devopadays-web fork
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: start sync
+      run: |
+        gh repo sync devopsdays-london/devopsdays-web
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
