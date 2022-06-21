@@ -8,15 +8,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v2
-      with:
-        repository: devopsdays-london/devopsdays-web
-        token: ${{ secrets.PAT_TOKEN }}
-
     - name: start sync
-      run: |
-        gh repo sync devopsdays-london/devopsdays-web
-      shell: bash
+      run: gh repo sync devopsdays-london/devopsdays-web
       env:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
