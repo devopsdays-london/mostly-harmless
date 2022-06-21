@@ -4,7 +4,7 @@ mkShell {
   buildInputs = [
     act
     pre-commit
-    shellcheck
     git-crypt
+    detect-secrets
   ];
 }

@@ -10,6 +10,9 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
+      with:
+        repository: devopsdays-london/devopsdays-web
+        token: ${{ secrets.PAT_TOKEN }}
 
     - name: start sync
       run: |
