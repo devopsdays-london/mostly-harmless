@@ -4,11 +4,12 @@ on:
   schedule:
     - cron: '0 5 * * *'
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
     - name: start sync
       run: gh repo sync devopsdays-london/devopsdays-web
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
